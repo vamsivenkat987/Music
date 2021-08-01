@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<DialogPane  fx:controller="sample.UpdateController" xmlns:fx="http://javafx.com/fxml">
+    <headerText>
+        Update Album and artist name
+    </headerText>
+    <content>
+        <GridPane vgap="20" hgap="20">
+            <Label text="title" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="Title" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Artist" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="Artist" GridPane.rowIndex="1" GridPane.columnIndex="1"
+            />
+            <Label text="Track Number" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="TrackNumber" GridPane.rowIndex="2" GridPane.columnIndex="1"
+            />
+            <Label text="Album" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="Album" GridPane.rowIndex="3" GridPane.columnIndex="1"
+            />
+
+
+        </GridPane>
+    </content>
+</DialogPane>

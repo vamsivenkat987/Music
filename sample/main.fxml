@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="boarderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+            fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: #7FFFD4;">
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="New" onAction="#updateArtist"/>
+                </items>
+            </Menu>
+            <Menu text="List">
+                <items>
+                    <MenuItem text="Artist" onAction="#listArtists"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Albums" onAction="#listAlbums"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Songs" onAction="#listSongs"/>
+                </items>
+            </Menu>
+        </MenuBar>
+
+    </top>
+    <center>
+        <TableView fx:id="artistTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" >
+            <columns>
+                <TableColumn prefWidth="${artistTable.width}" text="Music">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </TableView>
+    </center>
+    <left>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="170.00" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button  onAction="#Delete" maxWidth="Infinity" mnemonicParsing="false" text="Delete" />
+                <Button onAction="#listAlbumForArtist" maxWidth="Infinity" mnemonicParsing="false" text="Show Albums" />
+                <Button fx:id="play" onAction="#Play" maxWidth="Infinity" mnemonicParsing="false" text="Play"/>
+                <Button fx:id="close" maxWidth="Infinity" onAction="#handleCloseButton" cancelButton="true" mnemonicParsing="false" text="Close App"/>
+                
+            </children>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ProgressBar fx:id="progressBar"  prefWidth="200.0" progress="0.0">
+                    <HBox.margin>
+                        <Insets left="50.0" />
+                    </HBox.margin>
+                </ProgressBar>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
